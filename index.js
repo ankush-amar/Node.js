@@ -23,7 +23,14 @@ const server = http.createServer((req, res) => {
         res.write('<body><h1>These are some mens wear</h1></body>');
         res.write('</html>');
         return res.end();
-    }else if(req.url === '/womens')
+    }else if(req.url === '/womens'){
+        res.setHeader('Content-Type', 'text/html');
+        res.write('<html>');
+        res.write('<head><title>Ankush Amar</title></head>');
+        res.write('<body><h1>These are some womens wear</h1></body>');
+        res.write('</html>');
+        return res.end();
+    }
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>Ankush Amar</title></head>');
