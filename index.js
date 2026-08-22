@@ -34,6 +34,12 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             const fullBody = Buffer.concat(body).toString();
             console.log(fullBody);
+            const params = new URLSearchParams(fullBody);
+            const bodyObject = {};
+            for(const [key, val] of params.entries()){
+                bodyObject[key] = val;
+            }
+            console.log(bodyObject);
         });
 
         fs.writeFileSync('user.txt', 'Ankush Amar');
@@ -45,7 +51,7 @@ const server = http.createServer((req, res) => {
     res.write('<html>');
     res.write('<head><title>Ankush Amar</title></head>');
     res.write('<body><h1>Hello I am Ankush Amar</h1></body>');
-    res.write('</html>')
+    res.write('</html>');
     res.end();
 });
 
