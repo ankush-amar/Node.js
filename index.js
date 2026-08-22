@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.headers, req.method);
+    console.log(req.url, req.method);
     
     if(req.url === '/'){
         res.setHeader('Content-Type' , 'text/html');
