@@ -1,7 +1,6 @@
-const http = require('http');
 const fs = require('fs');
 
-const server = http.createServer((req, res) => {
+const userRequestHandeler = (req, res) => {
     console.log(req.url, req.method);
     
     if(req.url === '/'){
@@ -55,10 +54,6 @@ const server = http.createServer((req, res) => {
     res.write('<body><h1>Hello I am Ankush Amar</h1></body>');
     res.write('</html>');
     res.end();
-});
+};
 
-const PORT = 3000;
-
-server.listen(PORT, () => {
-    console.log(`Server running on address http://localhost:${PORT}`);
-});
+module.export = userRequestHandeler;
