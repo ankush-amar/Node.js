@@ -56,4 +56,4 @@ const userRequestHandeler = (req, res) => {
     res.end();
 };
 
-module.export = userRequestHandeler;
+module.exports = userRequestHandeler;
