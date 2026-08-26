@@ -17,7 +17,6 @@ const userRequestHandeler = (req, res) => {
         res.write('<input type="radio" id="female" name="gender" value="female">');
         res.write('<br><input type="submit" value="Submit"></br>');
         res.write('</form>');
-
         res.write('</body>');
         res.write('</html>');
         return res.end();
@@ -44,7 +43,7 @@ const userRequestHandeler = (req, res) => {
         });
 
         fs.writeFileSync('user.txt', 'Ankush Amar');
-        res.statusCode = 302;
+        // res.statusCode = 302;
         res.setHeader('Location' , '/');
 
     }
